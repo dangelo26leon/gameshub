@@ -86,7 +86,7 @@
           "os": "Windows 7/8/10",
           "procesador": "3 GHz processor",
           "memoria": "2 GB RAM",
-          "graficos": "xShader version 2.0",
+          "graficos": "Shader version 2.0",
           "almacenamiento": "12 GB"
         },
         "recomendados": {
@@ -511,6 +511,81 @@
         "https://play-lh.googleusercontent.com/screenshot2.jpg"
       ],
       "tags": ["MOBA", "Mobile", "5v5", "Estrategia"]
+    },
+    {
+      "id": 16,
+      "nombre": "Gran Turismo 7",
+      "imagen": "https://image.api.playstation.com/vulcan/ap/rnd/202109/1321/lGkWoC4znisZW45obztHz9Ti.jpg?w=780&thumb=false",
+      "categoria": "Sports",
+      "desarrollador": "Polyphony Digital",
+      "fechaLanzamiento": "2022-03-04",
+      "descripcion": "Gran Turismo 7 es un videojuego de simulación de carreras de 2022 desarrollado por Polyphony Digital y publicado por Sony Interactive Entertainment. ",
+      "rating": 4.5,
+      "plataformas": ["PlayStation", "PC"],
+      "precio": 69.99,
+      "esGratis": false,
+      "requisitos": {
+        "minimos": {
+          "os": "Windows 10 64-bit",
+          "procesador": "Intel Core i5-6600K",
+          "memoria": "4 GB RAM",
+          "graficos": "NVIDIA GeForce GT 1030",
+          "almacenamiento": "110 GB"
+        },
+        "recomendados": {
+          "os": "Windows 11 64-bit",
+          "procesador": "Intel Core i7-9700K",
+          "memoria": "8 GB RAM",
+          "graficos": "NVIDIA GeForce GTX 1660",
+          "almacenamiento": "120 GB"
+        }
+      },
+      "screenshots": [
+        "https://www.gran-turismo.com/images/c/i17oFyJlwnfmI.jpg",
+        "https://www.gran-turismo.com/images/c/i1NV9IVoZx3lNEE.jpg",
+        "https://www.gran-turismo.com/images/c/i1NPWzFjHQutHz.jpg",
+        "https://www.gran-turismo.com/images/c/i1ktQWwZwIUtxO.jpg",
+        "https://www.gran-turismo.com/images/c/i1iWlz3Qzyp3Fz.jpg",
+        "https://gmedia.playstation.com/is/image/SIEPDC/gran-turismo-7-world-series-en-22nov22?$1600px$"
+      ],
+      "tags": ["Carreras", "Coches", "Simulación", "Competitivo"]
+    },
+    {
+      "id": 17,
+      "nombre": "The Legend of Zelda: BOTW",
+      "imagen": "https://assets.nintendo.com/image/upload/ar_16:9,c_lpad,w_930/b_white/f_auto/q_auto/ncom/software/switch/70010000000025/7137262b5a64d921e193653f8aa0b722925abc5680380ca0e18a5cfd91697f58",
+      "categoria": "Adventure",
+      "desarrollador": "Nintendo EPD",
+      "fechaLanzamiento": "2017-03-03",
+      "descripcion": "Es un videojuego de acción-aventura de 2017 de la serie The Legend of Zelda, desarrollado por la filial Nintendo EPD en colaboración con Monolith Soft y publicado por Nintendo para las consolas Wii U y Nintendo Switch. ",
+      "rating": 4.9,
+      "plataformas": ["Nintendo Switch"],
+      "precio": 59.99,
+      "esGratis": false,
+      "requisitos": {
+        "minimos": {
+          "os": "Windows 10 64-bit",
+          "procesador": "Intel Core i5-6600K",
+          "memoria": "4 GB RAM",
+          "graficos": "NVIDIA GeForce GTX 970",
+          "almacenamiento": "15 GB"
+        },
+        "recomendados": {
+          "os": "Windows 11 64-bit",
+          "procesador": "Intel Core i7-9700K",
+          "memoria": "8 GB RAM",
+          "graficos": "NVIDIA GeForce GTX 1660",
+          "almacenamiento": "20 GB"
+        }
+      },
+      "screenshots": [
+        "https://assets.nintendo.com/image/upload/ar_16:9,b_auto:border,c_lpad/b_white/f_auto/q_auto/dpr_1.5/c_scale,w_700/ncom/software/switch/70010000000025/37559b8fa80cf0708c8dcef23ef4fea9af26d997a7c6f981565bc50eeaa3cc0f",
+        "https://assets.nintendo.com/image/upload/ar_16:9,b_auto:border,c_lpad/b_white/f_auto/q_auto/dpr_1.5/c_scale,w_700/ncom/software/switch/70010000000025/68f832d604ad2a85fa3dda00ae5345232fe271e01df40a48bb1fb2ed291f92f4",
+        "https://assets.nintendo.com/image/upload/ar_16:9,b_auto:border,c_lpad/b_white/f_auto/q_auto/dpr_1.5/c_scale,w_700/ncom/software/switch/70010000000025/b478fce889ed0237b252978f046884121f6be959f5b4b62e4fc03970bd617647",
+        "https://assets.nintendo.com/image/upload/ar_16:9,b_auto:border,c_lpad/b_white/f_auto/q_auto/dpr_1.5/c_scale,w_700/ncom/software/switch/70010000000025/0375d13a121f32ff06ef96aac1919b138f3ebe13e40cc0b2de7d39237b87fb86",
+        "https://assets.nintendo.com/image/upload/ar_16:9,b_auto:border,c_lpad/b_white/f_auto/q_auto/dpr_1.5/c_scale,w_700/ncom/software/switch/70010000000025/16304df4fdabb5674cc31edcc80ff1260ffe0f98156c300f31ecb490f18b632c"
+      ],
+      "tags": ["Aventura", "Mundo Abierto", "Heroes", "Supervivencia"]
     }
   ],
   "categorias": [
@@ -555,6 +630,13 @@
       "icono": "bi-trophy",
       "descripcion": "Juegos deportivos con simulación realista de diferentes disciplinas",
       "color": "#4ecdc4"
+    },
+    {
+      "id": "adventure",
+      "nombre": "Adventure",
+      "icono": "bi-compass",
+      "descripcion": "Juegos de aventura y exploración con narrativas épicas",
+      "color": "#9b59b6"
     }
   ]
 }
