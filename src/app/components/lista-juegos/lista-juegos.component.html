@@ -24,8 +24,25 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-4 d-flex align-items-end justify-content-lg-end">
-        <div class="results-info">
+      </div>
+     <div class="row align-items-center mt-1 gy-2"> <div class="col-auto">
+        <label for="selectOrdenamiento" class="text-secondary mb-0">Ordenar por:</label>
+      </div>
+
+      <div class="col-sm-5 col-md-4 col-lg-3"> <select
+          id="selectOrdenamiento"
+          class="form-select input-gaming" [(ngModel)]="criterioOrdenamiento"
+          (ngModelChange)="onOrdenamientoChange()">
+          <option value="">Relevancia</option>
+          <option value="nombreAsc">Nombre: A-Z</option>
+          <option value="nombreDesc">Nombre: Z-A</option>
+          <option value="precioAsc">Precio: Menor a Mayor</option>
+          <option value="precioDesc">Precio: Mayor a Menor</option>
+          <option value="ratingDesc">Rating: Mejor a Peor</option>
+        </select>
+      </div>
+      <div class="col d-none d-md-block">
+        <div class="info-conteo text-md-end">
           <span class="badge-gaming secondary">
             {{mostrandoResultados}} juegos encontrados
           </span>

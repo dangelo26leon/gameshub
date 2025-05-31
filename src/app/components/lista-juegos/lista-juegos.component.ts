@@ -24,11 +24,13 @@ export class ListaJuegosComponent implements OnInit {
     categoria: '',
     plataforma: '',
     precio: '',
-    rating: 0
+    rating: 0,
+    orden: ''
   });
   
   filtros$ = this.filtrosSubject.asObservable();
   terminoBusqueda = '';
+  criterioOrdenamiento = '';
   categoriaSeleccionada = '';
   mostrandoResultados = 0;
   
@@ -54,7 +56,7 @@ export class ListaJuegosComponent implements OnInit {
       this.filtros$
     ]).pipe(
       map(([juegos, filtros]) => {
-        let resultado = juegos;
+        let resultado = [...juegos];
         
         // Filtro por búsqueda
         if (filtros.busqueda) {
@@ -90,7 +92,26 @@ export class ListaJuegosComponent implements OnInit {
         if (filtros.rating > 0) {
           resultado = resultado.filter(juego => juego.rating >= filtros.rating);
         }
-        
+
+        if (filtros.orden) {
+          switch (filtros.orden) {
+            case 'nombreAsc':
+              resultado.sort((a, b) => a.nombre.localeCompare(b.nombre));
+              break;
+            case 'nombreDesc':
+              resultado.sort((a, b) => b.nombre.localeCompare(a.nombre));
+              break;
+            case 'precioAsc':
+              resultado.sort((a, b) => (a.esGratis ? 0 : a.precio) - (b.esGratis ? 0 : b.precio));
+              break;
+            case 'precioDesc':
+              resultado.sort((a, b) => (b.esGratis ? 0 : b.precio) - (a.esGratis ? 0 : a.precio));
+              break;
+            case 'ratingDesc':
+              resultado.sort((a, b) => b.rating - a.rating);
+              break;
+          }
+        }
         this.mostrandoResultados = resultado.length;
         return resultado;
       })
@@ -107,16 +128,21 @@ export class ListaJuegosComponent implements OnInit {
       ...filtros
     });
   }
+  onOrdenamientoChange(): void {
+    this.actualizarFiltros();
+  }
   
   limpiarFiltros(): void {
     this.terminoBusqueda = '';
     this.categoriaSeleccionada = '';
+    this.criterioOrdenamiento = '';
     this.filtrosSubject.next({
       busqueda: '',
       categoria: '',
       plataforma: '',
       precio: '',
-      rating: 0
+      rating: 0,
+      orden: ''
     });
   }
   
@@ -124,7 +150,8 @@ export class ListaJuegosComponent implements OnInit {
     this.filtrosSubject.next({
       ...this.filtrosSubject.value,
       busqueda: this.terminoBusqueda,
-      categoria: this.categoriaSeleccionada
+      categoria: this.categoriaSeleccionada,
+      orden: this.criterioOrdenamiento
     });
   }
 }
