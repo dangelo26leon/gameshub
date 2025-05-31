@@ -1,3 +1,13 @@
-<div>
-    
+<h2 class="titule">ESTADISTICA DE JUEGOS</h2>
+
+<div class="estadisticas-contain">
+    <label>Total de Juegos en la plataforma: {{juegosTotal}} </label>
+    <br>
+    <label>Juegos Gratuitos: {{juegosGratis}}</label>
+    <br>
+    <label>Juegos de Paga: {{juegosdePago}}</label>
+    <br>
+    <label>Juego con mejor Rating: {{mejorRating.nombre}} ({{mejorRating.rating}})</label>
+    <br>
+    <label>Promedio de precios: {{promPrecio | currency: 'USD' }}</label>
 </div>
