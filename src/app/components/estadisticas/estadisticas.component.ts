@@ -19,7 +19,9 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { JuegosDataService } from '../../services/juegos-data.service';
+import { Juego } from '../../interfaces/juego.interface';
 import { CurrencyPipe, DecimalPipe } from '@angular/common';
+
 
 @Component({
   selector: 'app-estadisticas',
@@ -39,7 +41,7 @@ export class EstadisticasComponent implements OnInit {
   constructor (private juegosService: JuegosDataService){}
 
   ngOnInit(): void {
-    this.juegosService.obtenerJuegos().subscribe(juegos => {
+    this.juegosService.obtenerJuegos().subscribe((juegos: Juego[]) => {
       this.juegosTotal=juegos.length;
 
       const juegosdePago = juegos.filter(juegos => juegos.precio>0);

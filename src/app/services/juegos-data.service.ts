@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject, map } from 'rxjs';
 import { Juego } from '../interfaces/juego.interface';
+import { Estadisticas } from '../interfaces/estadistica.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -86,4 +87,32 @@ export class JuegosDataService {
       )
     );
   }
+
+  getJuegosporPrecio(min: number, max: number): Observable<Juego[]>{
+    return this.juegos$.pipe(
+      map(juegos => juegos.filter(juegos=> juegos.precio >= min && juegos.precio<=max))
+    );
+  }
+  getEstadisticas(): Observable<Estadisticas> {
+  return this.juegos$.pipe(
+    map(juegos => {
+      const total = juegos.length;
+      const gratis = juegos.filter(j => j.precio === 0).length;
+      const pago = juegos.filter(j => j.precio > 0);
+      const promedio = pago.reduce((acc, j) => acc + j.precio, 0) / (pago.length || 1);
+      const mejor = juegos.reduce((prev, curr) => curr.rating > prev.rating ? curr : prev);
+
+      return {
+        juegoTotal: total,
+        juegosGratis: gratis,
+        juegosdePago: pago.length,
+        promPrecio: promedio,
+        mejorRating: mejor
+      };
+    })
+  );
+}
+
+
+  
 }
